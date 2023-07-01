@@ -1,0 +1,113 @@
+{{template "layout" .}}
+{{ define "content"}}
+
+    <main id="after-loading1">
+        <div class="title-artists-header-lists">
+            <div class="title-artist-list">
+                List of artists
+            </div>
+            <div class="searchbar-table">
+                <form action="" method="get">
+                    <i class="fa fa-user icon"></i>
+                    <input class="search-input-table" type="search" placeholder="Explore">
+                    <button type="submit" >
+                        <!-- <svg class="icons" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024"><path fill="currentColor" d="M1014.64 969.04L703.71 656.207c57.952-69.408 92.88-158.704 92.88-256.208c0-220.912-179.088-400-400-400s-400 179.088-400 400s179.088 400 400 400c100.368 0 192.048-37.056 262.288-98.144l310.496 312.448c12.496 12.497 32.769 12.497 45.265 0c12.48-12.496 12.48-32.752 0-45.263zM396.59 736.527c-185.856 0-336.528-150.672-336.528-336.528S210.734 63.471 396.59 63.471c185.856 0 336.528 150.672 336.528 336.528S582.446 736.527 396.59 736.527z"/></svg> -->
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="artist-card">
+            {{ range .Artists }}
+            <a href="/artist/{{.Id}}">
+                <div class="one-artist-card">
+                    <img src="{{.Image}}">
+                    <h2 class="artist-card-title">
+                        {{ if gt (len .Name) 14}}
+                            {{slice .Name 0 11}}...
+                        {{else}}
+                            {{ .Name}}
+                        {{end}}
+                    </h2>
+                    <span class="groups">
+                        {{ if gt (len .Members) 1 }}
+                            <p>Group</p>
+                        {{ else }}
+                            <p>Solo</p>
+                        {{end}}
+                    </span>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+        <!-- <div class="switch-tab">
+            <a href="">     
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
+                    <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+                </svg>
+                Use grid display 
+            </a>
+        </div>
+        <div class="table-artist">
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Groupe name</th>
+                            <th scope="col">Ceation date</th>
+                            <th scope="col">Member number</th>
+                            <th> First Album</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td scope="row">R1C1</td>
+                            <td>R1C2</td>
+                            <td>R1C3</td>
+                            <td>R1C3</td>
+                        </tr>
+                        <tr class="">
+                            <td scope="row">Item</td>
+                            <td>Item</td>
+                            <td>Item</td>
+                            <td>Item</td>
+                        </tr>
+                        <tr class="">
+                            <td scope="row">Item</td>
+                            <td>Item</td>
+                            <td>Item</td>
+                            <td>Item</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <span class="page-num">
+                    <a href="">
+                        1
+                    </a>
+                </span>
+                <span class="page-num current-page">
+                    <a href="">
+                        2
+                    </a>
+                </span>
+                <span class="page-num">
+                    3
+                </span>
+                <span class="page-num">
+                    end
+                </span>
+            </div>
+        </div> -->
+        <div class="footer">
+            <p class="footer-title">Groupie tracker</p> 
+            <p class="footer-title2">
+                 Made with love❤️
+             </p> 
+             <p class="footer-title3">
+                 Copyright 2023
+             </p>
+         </div>
+    </main>
+    
+{{ end }}

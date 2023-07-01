@@ -1,0 +1,66 @@
+{{ define "layout"}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css?ver=1.1">
+    <link rel="shortcut icon" href="/static/ico/favicon.ico" type="image/x-icon">
+    <title>{{.Title}}</title>
+</head>
+<body>
+    <header class="artist" id="after-loading">
+        <nav>
+            <div class="nav">
+                <a class="title" href="/">Groupie tracker</a>  
+                <div class="align-right">
+                    <ul class="menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/artists" aria-current="page">Artist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/events">Evenment</a>
+                        </li>
+                    </ul>
+                </div>
+                <a id="onpen-menu">
+                    <span class="burger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                  </a>
+              </div>
+              <div class="mobile-nav" id="onclick-mobile-btn">
+                  <a  id="closebtn">X</a>
+                  <ul class="menu-mobile">
+                      <li class="nav-item-mobile">
+                          <a class="nav-link-mobile" href="/artists" aria-current="page">Artist</a>
+                      </li>
+                      <li class="nav-item-mobile">
+                          <a class="nav-link-mobile" href="/events">Evenment</a>
+                      </li>
+                  </ul>
+              </div>
+        </nav>
+        <div class="title-page">
+            {{.Title}}
+        </div>
+    </header>
+    <section id="loader">
+        <div class="main-loader">
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </section>
+    {{template "content" .}}
+<script src="static/js/script.js"></script>
+</body>
+</html>
+{{end}}
