@@ -11,9 +11,9 @@ import (
 	"strings"
 )
 
-var PORT = ":8080"
 
 func main() {
+	PORT := envPortOr("3000")
 	args := os.Args[1:]
 	if len(args) > 0 {
 		tab := strings.Split(args[0], "=")
@@ -32,3 +32,11 @@ func main() {
 
 	http.ListenAndServe(PORT, nil)
 }
+func envPortOr(port string) string {
+	// If `PORT` variable in environment exists, return it
+	if envPort := os.Getenv("PORT"); envPort != "" {
+	  return ":" + envPort
+	}
+	// Otherwise, return the value of `port` variable from function argument
+	return ":" + port
+  }
