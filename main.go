@@ -37,6 +37,6 @@ func envPortOr(port string) string {
 	if envPort := os.Getenv("PORT"); envPort != "" {
 	  return ":" + envPort
 	}
-	// Otherwise, return the value of `port` variable from function argument
+	//  Otherwise, return the value of `port` variable from function argument
 	return ":" + port
   }
