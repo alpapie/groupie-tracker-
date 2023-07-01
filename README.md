@@ -26,7 +26,6 @@ The website and server are designed to be robust and should not crash under any 
 
 - Backend: Go programming language (Golang)
 - Frontend: HTML, CSS, JavaScript (or any preferred frontend framework)
-- Data Visualization: Libraries or frameworks suitable for visualizing data (e.g., D3.js, Chart.js, etc.)
 
 ## Getting Started
 
