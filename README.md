@@ -25,7 +25,7 @@ The website and server are designed to be robust and should not crash under any 
 ## Technologies Used
 
 - Backend: Go programming language (Golang)
-- Frontend: HTML, CSS, JavaScript (or any preferred frontend framework)
+- Frontend: HTML, CSS, JavaScript 
 
 ## Getting Started
 
