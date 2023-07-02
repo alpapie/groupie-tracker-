@@ -571,6 +571,15 @@ padding: 1.2vw;
 .error-title{
     font-size: 6vw;
 }
+.go-back{
+    background-color: #013e52;
+    border-radius: 7px;
+    text-align: center;
+    border:#013e5200;
+    padding: 8px;
+    font-size: 1vw;
+    font-size: 1.6vw;
+}
 
 @media screen and ( max-width: 960px) {
 .switch-tab{
