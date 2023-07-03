@@ -25,9 +25,8 @@ type Artist struct {
 }
 type ArtistOne struct {
 	Artists      Artist
-	Locations    Location
-	ConcertDates Date
 	Relations    Relation
+	Location     string
 }
 
 //****************************** GET ARTIST METHODE ******************************************************
@@ -43,16 +42,12 @@ func (AllArtists *ArtistOne) GetOneartist(id int) bool {
 	err := helper.GetJson(Url["artist"]+"/"+strconv.Itoa(id), &artist)
 	// fmt.Println(artist)
 	if err == nil {
-		location := Location{}
 		relation := Relation{}
 		// fmt.Println("alpapie")
-
-		err1 = helper.GetJson(artist.Locations, &location)
 		err2 = helper.GetJson(artist.Relations, &relation)
 
 		if err1 == nil && err2 == nil {
 			AllArtists.Artists = artist
-			AllArtists.Locations = location
 			AllArtists.Relations = relation
 			AllArtists.Relations.Artistname = artist.Name
 		} else {

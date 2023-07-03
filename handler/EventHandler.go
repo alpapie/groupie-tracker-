@@ -43,10 +43,18 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 
 func GetOneEvent(w http.ResponseWriter, r *http.Request) {
 	OneEvents:= models.ArtistOne{}
-	okk,id:=helper.PArseUlr(r,"event") 
+	okk,id:=helper.PArseUlr(r,"event")
+	loc:=r.URL.Query().Get("location")
 	if okk {
 		ok := OneEvents.GetOneartist(id)
 		if ok {
+			if loc==""{
+				for i:= range OneEvents.Relations.DatesLocations{
+					loc=i
+					break
+				}
+			}
+			OneEvents.Location=loc
 			err := helper.RenderTemplate(w, "pages/event/concert single", OneEvents)
 			if err != nil {
 				helper.ErrorPage(w, 404)
@@ -55,7 +63,8 @@ func GetOneEvent(w http.ResponseWriter, r *http.Request) {
 			}
 			return
 		}
+	}else{
+		helper.ErrorPage(w, 404)
+		return
 	}
-	helper.ErrorPage(w, 404)
-	return
 }

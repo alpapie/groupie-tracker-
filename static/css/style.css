@@ -536,9 +536,10 @@ padding: 1.2vw;
 .concert-infos{
     display: flex;
     margin: 0.4vw;
+    justify-content: space-between;
 }
 .concert-infos > .single-members{
- margin-right:0 2vw;
+ margin-left:2vw;
 }
 
 .concert-detail>.concert-title > h1{
@@ -547,15 +548,19 @@ padding: 1.2vw;
 }
 
 .location-date{
-    position: absolute;
-    right: 6vw;
-    /* text-align: center; */
+    align-items: flex-end;
 }
-
-.location-date> h1{
+.single{
+    display: flex;
+}
+.title-sss{
     font-size: 1.3vw;
     font-weight: 700;
-    
+    margin-bottom: 5px;
+}
+.one-date{
+    font-size: 0.9vw;
+    font-weight: 400;
 }
 
 .erro-page{
@@ -571,6 +576,7 @@ padding: 1.2vw;
 .error-title{
     font-size: 6vw;
 }
+
 .go-back{
     background-color: #013e52;
     border-radius: 7px;
@@ -658,6 +664,7 @@ padding: 1.2vw;
     header.artist{
         
     }
+  
 
 
 
