@@ -12,7 +12,7 @@
     font-style: normal;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -21,13 +21,14 @@
     transition: all .2s;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     display: none;
 
-  }
-  body{
+}
+
+body {
     background-color: #140e21;
-  }
+}
 
 /* STYLE THE LOAD PAGE */
 .loading {
@@ -85,7 +86,8 @@ body::-webkit-scrollbar{
         transform: scaleY(1);
     }
 }
-.main-loader{
+
+.main-loader {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -96,49 +98,59 @@ body::-webkit-scrollbar{
 
 
 /* HEADER PAGE */
-.mobile-nav,#onpen-menu{
+.mobile-nav,
+#onpen-menu {
     display: none;
     visibility: hidden;
 }
-#after-loading,#after-loading1{
+
+#after-loading,
+#after-loading1 {
     display: none;
     visibility: hidden;
 }
-header{
- /* You must set a specified height */
+
+header {
+    /* You must set a specified height */
     margin: 0px;
     padding: 0px;
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
     background-size: cover;
 }
 
-header.home{
-    background-image: url("/static/images/Herobanner bg.png") ;
-    height:940px;
+header.home {
+    background-image: url("/static/images/Herobanner bg.png");
+    height: 940px;
 }
-a{
+
+a {
     text-decoration: none;
     cursor: pointer;
     color: white;
 }
-.nav{
-    display:flex;
+
+.nav {
+    display: flex;
     padding-left: 30px;
     padding-right: 20px;
 }
-.title{
+
+.title {
     font-weight: bolder;
     font-size: 33px;
     color: white;
     margin-top: 32px;
 }
 
-.align-right{
+.align-right {
     right: 0;
     position: absolute;
 }
-.menu{
+
+.menu {
     text-decoration: none;
     display: flex;
     flex-wrap: nowrap;
@@ -148,31 +160,36 @@ a{
     list-style: none;
 
 }
-.nav-item{
+
+.nav-item {
     margin-right: 30px;
 }
-.nav-item>a{
- text-decoration: none;
- color: white;
- 
+
+.nav-item>a {
+    text-decoration: none;
+    color: white;
+
 }
 
-.containner{
+.containner {
     margin-top: 240px;
-    display:block;
+    display: block;
 }
-.containner > .nav-title{
+
+.containner>.nav-title {
     text-align: center;
-    color: white ;
+    color: white;
     font-size: 70px;
 }
-.searchbar{
+
+.searchbar {
     margin-top: 50px;
-    display:flex;
+    display: flex;
     justify-content: center;
 
 }
-input.search-input{
+
+input.search-input {
     width: 46vw;
     height: 60px;
     border: none;
@@ -181,19 +198,22 @@ input.search-input{
     text-align: center;
 }
 
-input::placeholder{
+input::placeholder {
     color: white;
     font-size: 20px;
 }
-.icons{
+
+.icons {
     color: white;
     margin-top: 12px;
     z-index: 999;
 }
-button{
+
+button {
     background-color: transparent;
 
 }
+
 button[type="submit"] {
     text-indent: -76px;
     padding: 0;
@@ -204,13 +224,13 @@ button[type="submit"] {
     position: absolute;
 }
 
-input{
+input {
     color: aliceblue;
-    font-size:  1.32vw;
+    font-size: 1.32vw;
 }
 
 /* main content  */
-main{
+main {
     background-image: url("/static/images/Herobanner\ bg.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -221,22 +241,22 @@ main{
     min-height: 17vw;
 }
 
-.main-content{
-    margin:0;
+.main-content {
+    margin: 0;
     min-height: 100px;
     padding: 40px 40px;
 }
 
-.main-header{
+.main-header {
     font-size: x-large;
     line-height: 1.2;
 }
 
-.concert-image{
+.concert-image {
     background-image: url("/static/images/concert.png");
     height: 11vw;
     margin-top: 1.32vw;
-    margin-bottom: 1.32vw; 
+    margin-bottom: 1.32vw;
     border-radius: 13px;
     background-color: #494457;
     background-repeat: no-repeat;
@@ -245,30 +265,34 @@ main{
     justify-content: space-between;
 }
 
-.artist-date{
+.artist-date {
     display: flex;
     margin-top: 9vw;
     align-items: flex-end;
 }
-.concert-image > .event, .artist{
+
+.concert-image>.event,
+.artist {
     display: block;
     padding: 1.32vw;
     font-size: 3vw;
 }
 
-.event > .event-title{
+.event>.event-title {
     font-size: 4vw;
 }
-.event > .event-name{
-    font-size:  1.7vw;
+
+.event>.event-name {
+    font-size: 1.7vw;
 }
-h3{
+
+h3 {
     font-size: x-large;
     margin-top: 10px;
 }
 
-.concert-image  > .event-date{
-    font-weight:bold;
+.concert-image>.event-date {
+    font-weight: bold;
     position: absolute;
     font-size: 1.1vw;
     right: 0vw;
@@ -276,56 +300,67 @@ h3{
     margin-right: 5vw;
 }
 
-.event-list,.artist-list{
+.event-list,
+.artist-list {
     margin-top: 3vw;
 }
-.event-card, .artist-card{
+
+.event-card,
+.artist-card {
     display: flex;
     flex-wrap: wrap;
     gap: 1.6vw;
     margin: 2vw 0.4vw 0 2vw;
 
 }
-.one-event-card, .one-artist-card{
-    border:#140e21 ;
+
+.one-event-card,
+.one-artist-card {
+    border: #140e21;
     border-radius: 8px;
     background-color: #180635;
     padding-left: 1vw;
     padding-top: 1vw;
     line-height: 1.4;
 }
-.one-event-card{
+
+.one-event-card {
     min-height: 110px;
     min-width: 140px;
 }
-.see-all{
+
+.see-all {
     position: absolute;
     right: 0;
     margin: 1.7vw 2.2vw 1vw 0;
 }
-.see-all> a{
+
+.see-all>a {
     background-color: #013e52;
     border-radius: 15px;
     text-align: center;
-    border:#013e5200;
+    border: #013e5200;
     padding: 8px;
     font-size: 1vw;
 }
 
-.one-artist-card{
+.one-artist-card {
     min-height: 120px;
     min-width: 150px;
     font-size: 12px;
 
 }
-.one-artist-card >.groups{
+
+.one-artist-card>.groups {
     font-size: 15px;
 }
-.one-artist-card > img{
+
+.one-artist-card>img {
     width: 120px;
     border-radius: 10px;
 }
-.footer{
+
+.footer {
     margin-top: 8vw;
     display: flex;
     font-size: 12px;
@@ -333,53 +368,59 @@ h3{
     justify-content: space-between;
     overflow: hidden;
 }
-.footer > .footer-title{
+
+.footer>.footer-title {
     font-size: xx-large;
     font-weight: 800;
     /* margin-right: 23vw; */
 }
 
-.footer-title2{
+.footer-title2 {
     font-size: x-large;
     font-weight: 600;
     /* margin-right: 23vw; */
 }
 
-.footer-title3{
+.footer-title3 {
     font-size: large;
     font-weight: 400;
 
 }
+
 /*  Artist css */
-header.artist{
+header.artist {
     min-height: 300px;
-    background-image: url("/static/images/Herobanner\ bg\ -resize.png") ;
+    background-image: url("/static/images/Herobanner\ bg\ -resize.png");
 }
 
-.title-page{
+.title-page {
     font-size: 4vw;
     font-weight: 1500;
     margin: 80px 0 0 4.3vw;
     color: white;
 }
-.title-artists-header-lists{
+
+.title-artists-header-lists {
     display: flex;
     padding: 2vw;
 }
-.title-artist-list{
+
+.title-artist-list {
     font-size: 3vw;
     font-weight: 1000;
 }
-.searchbar-table{
+
+.searchbar-table {
     position: absolute;
     right: 0;
     padding-bottom: 1vw
-   
 }
-.searchbar-table> form{
+
+.searchbar-table>form {
     padding-right: 3vw;
 }
-.search-input-table{
+
+.search-input-table {
     width: 15vw;
     height: 50px;
     border: none;
@@ -387,32 +428,37 @@ header.artist{
     background-color: #494457;
     text-align: center;
 }
-.table-artist{
+
+.table-artist {
     margin-top: 3.4vw;
     margin-left: 4.4vw;
     margin-bottom: 20vw;
 }
-.switch-tab{
+
+.switch-tab {
     position: absolute;
     right: 0;
     display: flex;
     /* margin: 2vw 1vw 1vw 0; */
-    color:white;
+    color: white;
     font-size: 19px;
     font-weight: 900;
     margin-right: 3.8vw;
     text-align: center;
 }
-.table-responsive{
-    justify-content:  center;
+
+.table-responsive {
+    justify-content: center;
     overflow-x: auto;
 
 }
-table{
+
+table {
     border-collapse: collapse;
-    margin:0;
+    margin: 0;
     margin-bottom: 3vw;
 }
+
 thead tr {
     background-color: #013e52;
     font-size: large;
@@ -430,14 +476,15 @@ tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-.pagination{
+.pagination {
     position: absolute;
     right: 0;
     margin-top: 0.3;
     margin-right: 2.5vw;
     color: white;
 }
-.pagination > .page-num{
+
+.pagination>.page-num {
     border-radius: 5px;
     margin-right: 0.5vw;
     padding: 0.3vw 0.5vw;
@@ -445,34 +492,37 @@ tbody tr {
 
 }
 
-.pagination > .current-page{
+.pagination>.current-page {
     background-color: #475fd3 !important;
 }
 
 /* map card */
-.map{
-padding: 1.2vw;
+.map {
+    padding: 1.2vw;
 }
-.map-card{
+
+.map-card {
     width: 100%;
 }
-.map-card>iframe{
+
+.map-card>iframe {
     height: 34vw;
     border-radius: 0.7vw;
     filter: invert(92%) contrast(83%);
 }
-.single-artits{
+
+.single-artits {
     display: flex;
     color: #fff;
     flex-direction: column;
     margin: 6vw 0;
     justify-content: center;
     width: 60%;
-   margin-left: 20%;
-    
+    margin-left: 20%;
+
 }
 
-.single-artits > .single-details{
+.single-artits>.single-details {
     display: flex;
     border-radius: 0.7vw;
     gap: 1vw;
@@ -480,40 +530,47 @@ padding: 1.2vw;
     padding: 2vw;
 
 }
-.artist-card-title2{
+
+.artist-card-title2 {
     font-size: 2.5vw;
 }
 
-.album{
+.album {
     line-height: 1.4;
     text-align: center;
     font-size: 2vw;
     margin-left: 2vw;
 }
-.album > .album-name{
+
+.album>.album-name {
     font-size: xx-large;
     font-weight: 800;
 
 }
-.album>img{
+
+.album>img {
     width: 11vw;
-    
+
 }
-.artist-song{
+
+.artist-song {
     border-right: 1px solid #c7c7c7;
     margin-right: 2vw;
     padding: 0 2.3vw;
     text-align: center;
 }
-.artist-song> h2{
+
+.artist-song>h2 {
     margin-top: 0.8vw;
     padding-bottom: 0.2vw;
 }
-.artist-song> img{
+
+.artist-song>img {
     width: 10vw !important;
     border-radius: 2px;
 }
-.single-members{
+
+.single-members {
     border-right: 1px solid #c7c7c7;
     padding: 0 0.3vw;
     min-width: 12vw;
@@ -523,87 +580,103 @@ padding: 1.2vw;
 
 }
 
-.concert-detail{
+.concert-detail {
     background-image: url("/static/images/concert.png");
     padding: 1.2vw;
     color: white;
     margin: 3vw;
     border-radius: 0.3vw;
     flex-direction: column;
-    
+
 }
 
-.concert-infos{
+.concert-infos {
     display: flex;
     margin: 0.4vw;
     justify-content: space-between;
 }
-.concert-infos > .single-members{
- margin-left:2vw;
+
+.concert-infos>.single-members {
+    margin-left: 2vw;
 }
 
-.concert-detail>.concert-title > h1{
+.concert-detail>.concert-title>h1 {
     font-weight: 900;
     font-size: 5vw;
 }
 
-.location-date{
+.location-date {
     align-items: flex-end;
 }
-.single{
+
+.single {
     display: flex;
 }
-.title-sss{
+
+.title-sss {
     font-size: 1.3vw;
     font-weight: 700;
     margin-bottom: 5px;
 }
-.one-date{
+
+.dates-all {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 30vw;
+}
+
+.one-date {
     font-size: 0.9vw;
     font-weight: 400;
 }
 
-.erro-page{
+.erro-page {
     color: #fff;
     display: block;
     position: absolute;
-   text-align:  center;
+    text-align: center;
     top: 40%;
-    right: 50%;
+    right: 45%;
     font-size: xx-large;
     font-weight: 800;
 }
-.error-title{
+
+.error-title {
     font-size: 6vw;
 }
 
-.go-back{
+.go-back {
     background-color: #013e52;
     border-radius: 7px;
     text-align: center;
-    border:#013e5200;
+    border: #013e5200;
     padding: 8px;
     font-size: 1vw;
     font-size: 1.6vw;
 }
 
-@media screen and ( max-width: 960px) {
-.switch-tab{
-    left:2.5vw;
-    margin-bottom: 1vw;
+@media screen and (max-width: 960px) {
+    .switch-tab {
+        left: 2.5vw;
+        margin-bottom: 1vw;
+    }
 }
-}
+
 /* responsive disign */
-@media screen and ( max-width: 600px) {
-    .align-right{
+@media screen and (max-width: 600px) {
+    .align-right {
         display: none;
         visibility: hidden;
     }
-    .mobile-nav,#onpen-menu{
+
+    .mobile-nav,
+    #onpen-menu {
         display: block;
-        visibility:visible;
+        visibility: visible;
     }
-    .mobile-nav{
+
+    .mobile-nav {
         color: white;
         position: fixed;
         z-index: 2;
@@ -613,9 +686,10 @@ padding: 1.2vw;
         width: 100%;
         backdrop-filter: blur(8px);
         margin-left: -100%;
-        transition:all 0.5s ease;
+        transition: all 0.5s ease;
     }
-    #closebtn{
+
+    #closebtn {
         position: absolute;
         color: white;
         right: 3vw;
@@ -623,7 +697,8 @@ padding: 1.2vw;
         font-size: xx-large;
         font-weight: bold;
     }
-    .menu-mobile{
+
+    .menu-mobile {
         font-size: 4vw;
         font-weight: 700;
         line-height: 2.4;
@@ -633,15 +708,18 @@ padding: 1.2vw;
         left: 40%;
         position: absolute;
     }
-    .menu-mobile>li{
+
+    .menu-mobile>li {
         text-decoration: none;
         list-style: none;
     }
-    .menu-mobile>li:hover{
+
+    .menu-mobile>li:hover {
         /* font-size: 5vw; */
         font-weight: 1000;
     }
-    #onpen-menu{
+
+    #onpen-menu {
         position: absolute;
         right: 4vw;
         margin-top: 8vw;
@@ -649,22 +727,20 @@ padding: 1.2vw;
         border-radius: 0.5vw;
     }
 
-    .burger-menu > span{
+    .burger-menu>span {
         border-top: 3px #0c0c0c solid;
         display: block;
         width: 4vw;
         margin: 1vw;
     }
-    
-    .burger-menu{
+
+    .burger-menu {
         border: 1.2vw #013e52 solid;
         border-radius: 0.4vw;
         display: block;
     }
-    header.artist{
-        
-    }
-  
+
+    header.artist {}
 
 
 
@@ -680,17 +756,20 @@ padding: 1.2vw;
 
 
 
-    .footer{
-        display:block;
+
+    .footer {
+        display: block;
         font-size: 4px;
         gap: 0;
         text-align: center;
         line-height: 1.8;
     }
-    .footer > .footer-title {
+
+    .footer>.footer-title {
         margin-right: 0;
     }
-    .footer-title2{
+
+    .footer-title2 {
         margin-right: 0;
     }
 }

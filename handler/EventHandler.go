@@ -63,8 +63,8 @@ func GetOneEvent(w http.ResponseWriter, r *http.Request) {
 			}
 			return
 		}
-	}else{
-		helper.ErrorPage(w, 404)
-		return
 	}
+	helper.ErrorPage(w, 404)
+	return
+
 }
