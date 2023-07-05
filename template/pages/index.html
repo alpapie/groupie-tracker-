@@ -89,7 +89,7 @@
                     <span class="artist-name">{{ index .Location.Locations 0}} </span>
                 </div>
                 <div class="artist-date">
-                    {{ index .Date.Dates 0}}
+                    {{slice  (index .Date.Dates 0) 1 10}}
                 </div>
             </div>
             <div class="event-list">
