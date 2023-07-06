@@ -30,19 +30,19 @@
                         <span></span>
                         <span></span>
                     </span>
-                  </a>
-              </div>
-              <div class="mobile-nav" id="onclick-mobile-btn">
-                  <a  id="closebtn">X</a>
-                  <ul class="menu-mobile">
-                      <li class="nav-item-mobile">
-                          <a class="nav-link-mobile" href="/artists" aria-current="page">Artist</a>
-                      </li>
-                      <li class="nav-item-mobile">
-                          <a class="nav-link-mobile" href="/events">Evenment</a>
-                      </li>
-                  </ul>
-              </div>
+                </a>
+            </div>
+            <div class="mobile-nav" id="onclick-mobile-btn">
+                <a id="closebtn">X</a>
+                <ul class="menu-mobile">
+                    <li class="nav-item-mobile">
+                        <a class="nav-link-mobile" href="/artists" aria-current="page">Artist</a>
+                    </li>
+                    <li class="nav-item-mobile">
+                        <a class="nav-link-mobile" href="/events">Evenment</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <section class="single-artits">
             <div class="single-details">
@@ -56,11 +56,11 @@
                 <div class="single-members">
                     <h2>Member</h2>
                     {{range .Artists.Members}}
-                        {{ if gt (len .) 18}}
-                            <p>  {{slice . 0 15}}...</p>
-                        {{else}}
-                            <p> {{ .}}</p>  
-                        {{end}}
+                    {{ if gt (len .) 18}}
+                    <p> {{slice . 0 15}}...</p>
+                    {{else}}
+                    <p> {{ .}}</p>
+                    {{end}}
                     {{end}}
                 </div>
                 <div class="album">
@@ -95,35 +95,41 @@
             <div class="event-card">
                 {{$ArtisName:= .Artists.Name}}
                 {{$ArtisId:= .Artists.Id}}
-                    {{ range $key, $value := .Relations.DatesLocations }}
-                        <a href="/event/{{$ArtisId}}?location={{$key}}">
-                            <div class="one-event-card">
-                            {{ if gt (len $ArtisName) 14}}
-                                <h2 class="event-card-title">  {{slice $ArtisName 0 11}}... </h2>
+                {{ range $key, $value := .Relations.DatesLocations }}
+                <a href="/event/{{$ArtisId}}?location={{$key}}">
+                    <div class="one-event-card">
+                        {{ if gt (len $ArtisName) 14}}
+                        <h2 class="event-card-title"> {{slice $ArtisName 0 11}}... </h2>
+                        {{else}}
+                        <h2 class="event-card-title">{{$ArtisName}}</h2>
+                        {{end}}
+                        <span class="location-date1">
+                            {{ if gt (len $key) 12}}
+                            <p><svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.49967 1.8334C12.1797 1.8334 15.1663 4.82007 15.1663 8.50007C15.1663 12.1867 12.1797 15.1667 8.49967 15.1667C4.81301 15.1667 1.83301 12.1867 1.83301 8.50007C1.83301 4.82007 4.81301 1.8334 8.49967 1.8334ZM11.0663 6.30673C11.1397 6.0734 10.9263 5.8534 10.693 5.92673L7.27967 6.9934C7.13967 7.04007 7.02634 7.14673 6.98634 7.28673L5.91967 10.7067C5.84634 10.9334 6.06634 11.1534 6.29301 11.0801L9.69301 10.0134C9.83301 9.9734 9.94634 9.86007 9.98634 9.72007L11.0663 6.30673Z"
+                                        fill="white" />
+                                </svg>
+                                {{slice $key 0 9}}... </p>
                             {{else}}
-                                <h2 class="event-card-title">{{$ArtisName}}</h2>
+                            <p><svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.49967 1.8334C12.1797 1.8334 15.1663 4.82007 15.1663 8.50007C15.1663 12.1867 12.1797 15.1667 8.49967 15.1667C4.81301 15.1667 1.83301 12.1867 1.83301 8.50007C1.83301 4.82007 4.81301 1.8334 8.49967 1.8334ZM11.0663 6.30673C11.1397 6.0734 10.9263 5.8534 10.693 5.92673L7.27967 6.9934C7.13967 7.04007 7.02634 7.14673 6.98634 7.28673L5.91967 10.7067C5.84634 10.9334 6.06634 11.1534 6.29301 11.0801L9.69301 10.0134C9.83301 9.9734 9.94634 9.86007 9.98634 9.72007L11.0663 6.30673Z"
+                                        fill="white" />
+                                </svg>
+                                {{ $key}} </p>
                             {{end}}
-                            <span class="location-date1">
-                                {{ if gt (len $key) 18}}
-                                    <p><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8.49967 1.8334C12.1797 1.8334 15.1663 4.82007 15.1663 8.50007C15.1663 12.1867 12.1797 15.1667 8.49967 15.1667C4.81301 15.1667 1.83301 12.1867 1.83301 8.50007C1.83301 4.82007 4.81301 1.8334 8.49967 1.8334ZM11.0663 6.30673C11.1397 6.0734 10.9263 5.8534 10.693 5.92673L7.27967 6.9934C7.13967 7.04007 7.02634 7.14673 6.98634 7.28673L5.91967 10.7067C5.84634 10.9334 6.06634 11.1534 6.29301 11.0801L9.69301 10.0134C9.83301 9.9734 9.94634 9.86007 9.98634 9.72007L11.0663 6.30673Z" fill="white"/>
-                                        </svg>
-                                         {{slice $key 0 15}}... </p> 
-                                {{else}}
-                                    <p><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8.49967 1.8334C12.1797 1.8334 15.1663 4.82007 15.1663 8.50007C15.1663 12.1867 12.1797 15.1667 8.49967 15.1667C4.81301 15.1667 1.83301 12.1867 1.83301 8.50007C1.83301 4.82007 4.81301 1.8334 8.49967 1.8334ZM11.0663 6.30673C11.1397 6.0734 10.9263 5.8534 10.693 5.92673L7.27967 6.9934C7.13967 7.04007 7.02634 7.14673 6.98634 7.28673L5.91967 10.7067C5.84634 10.9334 6.06634 11.1534 6.29301 11.0801L9.69301 10.0134C9.83301 9.9734 9.94634 9.86007 9.98634 9.72007L11.0663 6.30673Z" fill="white"/>
-                                        </svg>
-                                        {{ $key}} </p> 
-                                {{end}}
-                                {{range (slice  $value 0 3) }}
-                                    <p>
-                                        {{.}}
-                                    </p>
-                                {{end}}
-                            </span>
-                            </div>
-                        </a> 
-                    {{end}}
+                            {{range (slice $value 0 3) }}
+                            <p>
+                                {{.}}
+                            </p>
+                            {{end}}
+                        </span>
+                    </div>
+                </a>
+                {{end}}
             </div>
         </div>
         <section class="map">
@@ -131,18 +137,21 @@
                 Map
             </div>
             <div class="map-card">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.827181853647!2d-16.92806705025752!3d14.342818833606369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec221e83d8b21a3%3A0x6494580084081b3b!2sNianing!5e0!3m2!1sfr!2ssn!4v1674310568905!5m2!1sfr!2ssn" title="event map" frameborder="0" aria-hidden="false" tabindex="0" style="border: 0px; width: 100%; "></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.827181853647!2d-16.92806705025752!3d14.342818833606369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec221e83d8b21a3%3A0x6494580084081b3b!2sNianing!5e0!3m2!1sfr!2ssn!4v1674310568905!5m2!1sfr!2ssn"
+                    title="event map" frameborder="0" aria-hidden="false" tabindex="0"
+                    style="border: 0px; width: 100%; "></iframe>
             </div>
         </section>
         <div class="footer">
-            <p class="footer-title">Groupie tracker</p> 
+            <p class="footer-title">Groupie tracker</p>
             <p class="footer-title2">
-                 Made with love❤️
-            </p> 
-             <p class="footer-title3">
-                 Copyright 2023
-             </p>
-         </div>
+                Made with love❤️
+            </p>
+            <p class="footer-title3">
+                Copyright 2023
+            </p>
+        </div>
     </main>
 </body>
 <script src="/static/js/script.js"></script>

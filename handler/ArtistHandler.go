@@ -38,6 +38,11 @@ func GetArtists(w http.ResponseWriter, r *http.Request) {
 
 func GetOneArtist(w http.ResponseWriter, r *http.Request) {
 	OneArtist := models.ArtistOne{}
+	_ok := middlewares.Getmethode(r, "get")
+	if !_ok {
+		helper.ErrorPage(w, 405)
+		return
+	}
 	okk,id:=helper.PArseUlr(r,"artist") 
 	if okk {
 		ok := OneArtist.GetOneartist(id)

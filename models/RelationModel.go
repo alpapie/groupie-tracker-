@@ -22,3 +22,4 @@ type Index struct {
 // 	err := helper.GetJson(Url["relation"], &AllRelation)
 // 	return err != nil
 // }
+

@@ -66,6 +66,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			helper.ErrorPage(w, 404)
 			fmt.Println(err)
+			return
 		}
 	} else {
 		// fmt.Fprintf(w, string("error to get data"),iserr)

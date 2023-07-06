@@ -43,6 +43,11 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 
 func GetOneEvent(w http.ResponseWriter, r *http.Request) {
 	OneEvents:= models.ArtistOne{}
+	_ok := middlewares.Getmethode(r, "get")
+	if !_ok {
+		helper.ErrorPage(w, 405)
+		return
+	}
 	okk,id:=helper.PArseUlr(r,"event")
 	loc:=r.URL.Query().Get("location")
 	if okk {
@@ -66,5 +71,4 @@ func GetOneEvent(w http.ResponseWriter, r *http.Request) {
 	}
 	helper.ErrorPage(w, 404)
 	return
-
 }
