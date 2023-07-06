@@ -1,26 +1,20 @@
-# Groupie Trackers
 
-Groupie Trackers is a website that displays information about bands and artists, their concert locations, and dates. The project aims to create a user-friendly site with various data visualizations to present the data in an organized and visually appealing manner.
+# Groupie Tracker Visualizations
+This project aims to manipulate data retrieved from an API and present it in a visually appealing and user-friendly manner. The implementation of the project should adhere to Schneiderman's 8 Golden Rules of Interface Design, which are as follows:
 
-## Features
+1. **Design dialogue to yield closure:** Design dialogues and interactions in a way that gives users a sense of completion and closure. Clearly indicate the beginning, middle, and end of a task or interaction to help users understand the system's behavior.
 
-### Band Information
-The website provides detailed information about bands and artists, including their names, images, the year they started their activity, the date of their first album, and the members. The data is fetched from the API's `artists` endpoint.
+2. **Enable frequent users to use shortcuts:** Provide shortcuts or efficient methods for experienced users to accomplish tasks more quickly. This can include keyboard shortcuts, quick access menus, or personalized settings.
 
-### Concert Locations
-Concert locations are displayed, showcasing the last and/or upcoming venues where the bands will perform. The data is retrieved from the API's `locations` endpoint.
+3. **Offer informative feedback:** Give users clear and meaningful feedback when they perform actions. This feedback can be in the form of visual cues, progress indicators, or status messages to keep users informed about the system's response.
 
-### Concert Dates
-The website also presents the dates of the last and/or upcoming concerts of the bands. This information is obtained from the API's `dates` endpoint.
+4. **Permit easy reversal of actions:** Allow users to undo or reverse their actions easily. This feature provides a safety net for users to correct mistakes or explore different options without fear of irreversible consequences.
 
-### Data Visualization
-The bands' information and concert details are visualized using various data visualization techniques, such as blocks, cards, tables, lists, pages, and graphics. The choice of visualization method is left to the developer's discretion, with a focus on user-friendly and visually appealing displays.
+5. **Reduce short-term memory load:** Minimize the cognitive load on users' short-term memory by organizing information in a logical and intuitive manner. Use visual aids, clear labels, and contextual cues to make tasks and options easier to understand and remember.
 
-### Client-Server Communication
-The website features client-server communication, allowing users to trigger actions that interact with the server. This event-based system enables the client to send requests to the server, which responds with the requested information following the request-response model.
+6. **Strive for consistency:** Ensure that the design elements, layout, and interaction patterns are consistent throughout the application. This consistency helps users develop a mental model and navigate the interface more easily.
 
-### Error Handling
-The website and server are designed to be robust and should not crash under any circumstances. All pages are thoroughly tested to ensure they work correctly, and appropriate error handling mechanisms are implemented to gracefully handle any errors.
+7. **Support internal locus of control:** Ensure that users feel in control and can predict the system's behavior. Provide clear and consistent cues to help users understand how to interact with the interface and achieve their goals.
 
 ## Technologies Used
 
