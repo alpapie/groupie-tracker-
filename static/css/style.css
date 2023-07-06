@@ -544,6 +544,7 @@ tbody tr {
     text-align: center;
     font-size: 2vw;
     padding: 4vw;
+    margin-left: 1vw;
 }
 
 .album>.album-name {
@@ -631,10 +632,14 @@ tbody tr {
 }
 
 .one-date {
-    font-size: 0.9vw;
+ 
     font-weight: 400;
+    font-size: 0.5em;
 }
-
+.one-date > svg{
+    
+    margin-bottom: -4px;
+}
 @media screen and (max-width: 960px) {
     .switch-tab {
         left: 2.5vw;
@@ -685,6 +690,9 @@ tbody tr {
     }
     .see-all {
      justify-content: center;
+    }
+    .main-loader {
+        right: 40%;
     }
 }
 
