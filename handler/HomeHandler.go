@@ -83,3 +83,21 @@ func GetData(ch chan error) {
 	ch <- helper.GetJson(Url["location"], &Location)
 
 }
+
+
+func RefreshData(artist,event,loc,date bool)(bool){
+	var err,errr ,errrr,errrrr error
+	if artist && Artists==nil{
+		err=helper.GetJson(Url["artist"],&Artists)
+	}
+	if event && Events.Indexes==nil{
+		errr=helper.GetJson(Url["event"], &Location)
+	}
+	if loc && Location.Indexes==nil{
+		errr=helper.GetJson(Url["location"], &Location)
+	}
+	if date && Date.Indexes==nil{
+		errr=helper.GetJson(Url["date"], &Location)
+	}
+	return err!=nil || errr!=nil || errrr !=nil || errrrr != nil
+}

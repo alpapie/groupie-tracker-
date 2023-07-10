@@ -15,8 +15,7 @@ func GetArtists(w http.ResponseWriter, r *http.Request) {
 		helper.ErrorPage(w, PageError)
 		return
 	}
-	err := helper.GetJson(Url["artist"], &Artists)
-	if err == nil {
+	if !RefreshData(true,false,false,false){
 		Datas := struct {
 			Artists []models.Artist
 			Title       string

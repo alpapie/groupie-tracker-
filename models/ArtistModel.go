@@ -1,7 +1,8 @@
 package models
 
 import (
-	"goupie-tracker/helper"
+	"encoding/json"
+	"net/http"
 	"strconv"
 )
 
@@ -24,9 +25,9 @@ type Artist struct {
 	Relations    string   `json:"relations"`
 }
 type ArtistOne struct {
-	Artists      Artist
-	Relations    Relation
-	Location     string
+	Artists   Artist
+	Relations Relation
+	Location  string
 }
 
 //****************************** GET ARTIST METHODE ******************************************************
@@ -39,12 +40,12 @@ func (AllArtists *ArtistOne) GetOneartist(id int) bool {
 	artist := Artist{}
 	var err1, err2 error
 
-	err := helper.GetJson(Url["artist"]+"/"+strconv.Itoa(id), &artist)
+	err := GetJson(Url["artist"]+"/"+strconv.Itoa(id), &artist)
 	// fmt.Println(artist)
 	if err == nil {
 		relation := Relation{}
 		// fmt.Println("alpapie")
-		err2 = helper.GetJson(artist.Relations, &relation)
+		err2 = GetJson(artist.Relations, &relation)
 
 		if err1 == nil && err2 == nil {
 			AllArtists.Artists = artist
@@ -57,4 +58,13 @@ func (AllArtists *ArtistOne) GetOneartist(id int) bool {
 	} else {
 		return false
 	}
+}
+
+func GetJson(url string, model interface{}) error {
+	response, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+	defer response.Body.Close()
+	return json.NewDecoder(response.Body).Decode(model)
 }

@@ -45,15 +45,18 @@
             </div>
         </nav>
         <div class="containner">
+            <br>
             <h1 class="nav-title">
                 Discover, Explore, and Experience <br>
                 Music with <br>
                 Groupie Tracker! <br>
             </h1>
             <div class="searchbar">
-                <form action="#" method="get">
+                <form action="/search" method="get">
                     <i class="fa fa-user icon"></i>
-                    <input class="search-input" type="search" placeholder="Explore">
+                    <input class="search-input"  type="search" placeholder="Explore"  name="search" id="search">
+                    <ul class="sugestion" id="ul-item">
+                    </ul>
                     <button type="submit">
                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                             viewBox="0 0 1024 1024">

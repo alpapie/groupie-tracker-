@@ -312,7 +312,7 @@ h3 {
     flex-wrap: wrap;
     gap: 1.6vw;
     margin: 2vw 0.4vw 0 2vw;
-
+    /* min-height: 23vw; */
 }
 
 .one-event-card,
@@ -418,7 +418,36 @@ header.artist {
     right: 0;
     padding-bottom: 1vw
 }
-
+.sugestion{
+    display: none;
+    border-radius: 3px;
+     position: absolute; 
+    /* right: 5vw; */
+    margin-top: 3px;
+    padding: 0;
+    min-width: 240px;
+    max-height: 350px;
+    overflow: auto;
+    background-color: #013e52;
+    color: #fff;
+    text-align: center;
+}
+.sugestion::-webkit-scrollbar{
+    display: none;
+}
+.sugestion>li{
+    font-size: x-large;
+    list-style: none;
+    padding: 0.5vw;
+ 
+}
+.sugestion>li:hover{
+    background-color:#01131a;
+    border-radius: 3px;
+}
+.items{
+    cursor: pointer;
+}
 .searchbar-table>form {
     padding-right: 3vw;
 }

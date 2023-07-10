@@ -11,4 +11,7 @@ func Route() {
 	http.HandleFunc("/artist/", handler.GetOneArtist)
 	http.HandleFunc("/events", handler.GetEvents)
 	http.HandleFunc("/event/", handler.GetOneEvent)
+	http.HandleFunc("/search", handler.Search)
+	http.HandleFunc("/searchItem", handler.GetItem)
+	
 }
