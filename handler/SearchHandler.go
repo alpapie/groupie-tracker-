@@ -28,19 +28,31 @@ func Search(w http.ResponseWriter, r *http.Request) {
 
 		_=RefreshData(true, false, true, false)
 		if search != "" {
-			list:=strings.Split(search," - ")
-			if len(list)<2{
-				Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,false,false,false)
+			// list:=strings.Split(search," - ")
+			// if len(list)<2{
+			// 	Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,false,false,false)
+			// }else{
+			// 	search=list[0]
+			// 	if list[1]=="artist/band"{
+			// 		Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,true,false,false)
+			// 		} else if list[1]=="member"{
+			// 		fmt.Println(list[1])
+			// 		Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,false,true,false)
+			// 	}else if list[1]=="location"{
+			// 		Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,false,false,true)
+			// 	}
+			// }
+			if strings.HasSuffix(search," - artist/band") {
+				search=strings.ReplaceAll(search," - artist/band","")
+				Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,true,false,false)
+			} else if strings.HasSuffix(search," - member"){
+				search=strings.ReplaceAll(search," - member","")
+				Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,false,true,false)
+			}else if strings.HasSuffix(search," - location"){
+				search=strings.ReplaceAll(search," - location","")
+				Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,false,false,true)
 			}else{
-				search=list[0]
-				if list[1]=="artist/band"{
-					Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,true,false,false)
-					} else if list[1]=="member"{
-					fmt.Println(list[1])
-					Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,false,true,false)
-				}else if list[1]=="location"{
-					Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,false,false,true)
-				}
+				Datas.Artists=helper.FilterData(Artists,Location.Indexes,search,false,false,true)
 			}
 			err := helper.RenderTemplateWithLoyout(w, "pages/artist/artist", Datas)
 			if err != nil {
