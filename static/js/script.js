@@ -81,14 +81,6 @@ search.addEventListener("keyup", () => {
     xhr.send();
 })
 
-// search.addEventListener("keydown", () => {
-//     elem=document.getElementById("item")
-//     console.log(elem)
-//     elem.addEventListener("click",()=>{
-//         search.value=elem.innerHTML
-//     })
-//     elem=""
-// })
 /*execute a function when someone clicks in the document:*/
 list_item.addEventListener("click", function (e) {
     console.log(e.target.innerHTML)
