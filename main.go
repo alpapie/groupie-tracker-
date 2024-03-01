@@ -2,15 +2,12 @@ package main
 
 import (
 	"fmt"
-	// "goupie-tracker/handler"
-	"goupie-tracker/helper"
-	"goupie-tracker/routes"
+	"log"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
 )
-
 
 func main() {
 	PORT := envPortOr("3000")
@@ -30,13 +27,14 @@ func main() {
 	routes.Route()
 	fmt.Println("Listening in http://localhost" + PORT)
 
-	http.ListenAndServe(PORT, nil)
+	log.Fatal(http.ListenAndServe(PORT, nil))
 }
+
 func envPortOr(port string) string {
 	// If `PORT` variable in environment exists, return it
 	if envPort := os.Getenv("PORT"); envPort != "" {
-	  return ":" + envPort
+		return ":" + envPort
 	}
 	//  Otherwise, return the value of `port` variable from function argument
 	return ":" + port
-  }
+}
